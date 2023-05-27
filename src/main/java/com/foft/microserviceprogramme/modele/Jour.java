@@ -12,7 +12,6 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate
 public class Jour {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

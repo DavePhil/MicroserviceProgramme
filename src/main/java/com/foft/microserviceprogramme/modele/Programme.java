@@ -16,6 +16,10 @@ public class Programme {
     private LocalTime heureDeDebut;
     private LocalTime heureDeFin;
     private String totalHoraire;
+    private Integer idUe;
+    private Integer idSalle;
+    private Integer idEnseignant;
+
     @ManyToOne
     private Jour jour;
 
