@@ -19,9 +19,14 @@ public class Programme {
     private Integer idUe;
     private Integer idSalle;
     private Integer idEnseignant;
+    private Integer idSemestre;
+    private Integer idClasse;
 
     @ManyToOne
     private Jour jour;
+
+    @ManyToOne
+    private Seance Seance;
 
 
 

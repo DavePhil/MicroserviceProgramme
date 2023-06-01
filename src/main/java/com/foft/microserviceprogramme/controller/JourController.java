@@ -14,6 +14,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("MicroJour")
 public class JourController {
     @Autowired
     private JourService jourService;
@@ -33,7 +34,6 @@ public class JourController {
     }
 
     @GetMapping("/jours")
-    @ResponseBody
     public List<Jour> getJours(){
         return jourService.findJours();
     }

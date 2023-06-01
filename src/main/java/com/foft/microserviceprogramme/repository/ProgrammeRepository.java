@@ -13,4 +13,6 @@ public interface ProgrammeRepository extends JpaRepository<Programme, Integer> {
 
 //    @Query("select prog from Programme prog inner join Jour jour on jour.id= prog.jour.id where jour.id=:jourId and ")
 //    List<Programme> findProgrammeByJourAndClasseAndSemestre();
+    @Query("select prog from Programme prog inner join Jour jour on jour.id= prog.jour.id where jour.id=:idJour and prog.idSemestre=:idSemestre and prog.idClasse=:idClasse")
+    List<Programme> findProgrammeByJourAndIdClasse(@Param("idJour")Integer idJour,@Param("idClasse")Integer idClasse,@Param("idSemestre") Integer idSemestre);
 }

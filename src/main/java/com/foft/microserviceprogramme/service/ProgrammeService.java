@@ -39,37 +39,16 @@ public class ProgrammeService {
     public Programme saveProgramme ( Programme programme){
         return programmeRepository.save(programme);
     }
-    public int idOfJour (String jour){
-        //  System.out.println(id);
-        return switch (jour) {
-            case "lundi" -> 1;
-            case "mardi" -> 2;
-            case "mercredi" -> 3;
-            case "jeudi" -> 4;
-            case "vendredi" -> 5;
-            case "samedi" -> 6;
-            case "dimanche" -> 7;
-            default -> 0;
-        };
-    }
+
 
 
     public List<Programme> findByJour (int jourId) {return programmeRepository.findProgrammeByJour(jourId);}
 
 
 
-
-
-
-
-
-
-
-
-
-//    public List<Programme> findBySpecialiteAndNiveau(int idSpecialite, int idNiveau, int idJour , int semestreId ){
-//        return programmeRepository.findProgrammeByNiveauAndSpecialite(idSpecialite,idNiveau, idJour,semestreId);
-//    }
+    public List<Programme> findByClasseAndSemestre(int idJour, int idClasse , int semestreId ){
+        return programmeRepository.findProgrammeByJourAndIdClasse( idJour,idClasse,semestreId);
+    }
 
 
 
@@ -89,38 +68,12 @@ public class ProgrammeService {
 
 
 
-    Date aujourdhui = new Date();
-    private static final SimpleDateFormat formater = new SimpleDateFormat("EEEE");
-    private static final SimpleDateFormat heureFormat = new SimpleDateFormat("HH:mm");
-    String jour = formater.format(aujourdhui);
 
 
 
 
-//    @Scheduled(cron = "0 59 23 * * ?") // Exécute tous les jours à 23 h 59 min
-//    public void planifierRattrapage() {
-//        List<Fiche> fiches = ficheService.findByState(0);
-//        for(Fiche fiche : fiches) fiche.setState(3);
-//    }
-//    @Scheduled(cron = "0 59 23 * * L") // Exécute le dernier jour de la semaine à 23 h 59 min
-//    public void planifierEchec() {
-//        List<Fiche> fiches = ficheService.findByState(0);
-//        for(Fiche fiche : fiches) fiche.setState(3);
-//    }
 
-//    @Scheduled(fixedRate = 29000) // Exécute toutes les 30 secondes
-//    public void genererFiche() throws ParseException {
-//
-//        List<Programme> programmes = findByJour(idOfJour(jour));
-//        for (Programme programme : programmes){
-//            String heureDebut = heureFormat.format(heureFormat.parse(programme.getHeureDeDebut().toString()));
-////            int specialiteId = programme.getUe().getSpecialite().getId();
-////            int niveauId = programme.getUe().getNiveau().getId();
-//            if(heureDebut.equals(heureFormat.format(new Date()))){
-//                //List<Delegue> delegues = delegueRepository.getAllBySpecialiteAndNiveau(specialiteId,niveauId);
-//                ficheService.createFiche(programme,programme.getUe().getNiveau(), programme.getUe().getSpecialite(), programme.getSeance());
-//            }
-//        }
+
 
 
 
