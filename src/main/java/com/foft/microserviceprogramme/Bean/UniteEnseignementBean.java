@@ -11,6 +11,6 @@ public class UniteEnseignementBean {
     private Integer id;
     private String code;
     private int idClasse;
-    private Semestre semestre;
+    private SemestreBean semestre;
 
 }

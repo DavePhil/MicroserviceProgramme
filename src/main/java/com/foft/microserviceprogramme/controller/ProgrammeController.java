@@ -74,7 +74,7 @@ public class ProgrammeController {
         return programmeService.getProgrammes();
     }
 
-    @GetMapping("/programme/{idjour}")
+    @GetMapping("/programmes/{idjour}")
     public List<Programme> programmes (@PathVariable("idjour") Integer idjour){
         return programmeService.findByJour(idjour);
     }
