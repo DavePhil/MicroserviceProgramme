@@ -1,9 +1,10 @@
 package com.foft.microserviceprogramme.controller;
 
+import com.foft.microserviceprogramme.exceptions.ImpossibleToAdd;
+import com.foft.microserviceprogramme.exceptions.NotFoundException;
 import com.foft.microserviceprogramme.modele.Jour;
 import com.foft.microserviceprogramme.service.JourService;
-import com.foft.microserviceuniteenseignement.exceptions.ImpossibleToAdd;
-import com.foft.microserviceuniteenseignement.exceptions.NotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
