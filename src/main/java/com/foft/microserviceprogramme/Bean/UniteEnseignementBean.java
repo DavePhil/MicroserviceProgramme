@@ -1,6 +1,6 @@
 package com.foft.microserviceprogramme.Bean;
 
-import com.foft.microserviceuniteenseignement.modele.Semestre;
+
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
